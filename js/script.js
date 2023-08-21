@@ -19,12 +19,12 @@ const slideBtns = document.querySelectorAll(".radio")
 let click = 0
 let next = ""
 
-const slider = () => {
-	slideBtns.forEach(btn => btn.classList.toggle("activeBtn"))
+// const slider = () => {
+// 	slideBtns.forEach(btn => btn.classList.toggle("activeBtn"))
 
-	// rozwiazanie w przypadku gdy mamy tylko 2 mozliwosci
-	slides.forEach(slide => slide.classList.toggle("active"))
-}
+// 	// rozwiazanie w przypadku gdy mamy tylko 2 mozliwosci
+// 	slides.forEach(slide => slide.classList.toggle("active"))
+// }
 
 const toggleSearch = () => {
 	if (divCollapse.classList.contains("show")) {
@@ -112,4 +112,9 @@ lastImg.addEventListener("click", lastImage)
 
 scrollBtn.addEventListener("click", moveShadow)
 
-slideBtns.forEach(btn => btn.addEventListener("click", slider))
+// slideBtns.forEach(btn => btn.addEventListener("click", slider))
+
+document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide' );
+    splide.mount();
+  } );

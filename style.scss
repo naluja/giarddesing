@@ -61,12 +61,10 @@ nav {
 header {
 	background-color: $beige;
 	position:relative;
-	.slide.active{
-		display:block;
+	.splide__slide{
+		max-width: 100%;
 	}
-	.slide{
-		display:none;
-	}
+	
 	.navigation{
 		position:absolute;
 		bottom: 20px;

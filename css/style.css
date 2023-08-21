@@ -53,11 +53,8 @@ header {
   background-color: #DCC1AB;
   position: relative;
 }
-header .slide.active {
-  display: block;
-}
-header .slide {
-  display: none;
+header .splide__slide {
+  max-width: 100%;
 }
 header .navigation {
   position: absolute;

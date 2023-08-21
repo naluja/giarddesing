@@ -13,7 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@400;500&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+        integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a6428406eb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -61,50 +62,56 @@
         </div>
     </nav>
     <header>
-        <div class="container-fluid">
-            <div class="slider-container">
-                <div class="slide active">
-                    <div class="row align-items-center column-gap-5">
-                        <div class="col">
-                            <div class="header-text ms-lg-5">
-                                <h1>Nowoczesna aranżacja Twojego ogrodu</h1>
-                                <p>Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji.
-                                    Oferujemy
-                                    kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+        <div class="container-fluid pe-0">
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="row align-items-center column-gap-5">
+                                <div class="col">
+                                    <div class="header-text ms-lg-5">
+                                        <h1>Nowoczesna aranżacja Twojego ogrodu</h1>
+                                        <p>Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji.
+                                            Oferujemy
+                                            kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+                                    </div>
+                                    <div class="header-btn ms-lg-5 d-flex justify-content-center">
+                                        <button id="contact">Skontaktuj się z nami</button>
+                                        <button id="production">Zobacz nasze realizacje<img src="/css/img/Vector.svg"
+                                                alt="vector"></button>
+                                    </div>
+                                </div>
+                                <div class="col-6 px-0 d-none d-md-block">
+                                    <img src="css/img/Photo.png" alt="garden image" class="img-fluid">
+                                </div>
                             </div>
-                            <div class="header-btn ms-lg-5 d-flex justify-content-center">
-                                <button id="contact">Skontaktuj się z nami</button>
-                                <button id="production">Zobacz nasze realizacje<img src="/css/img/Vector.svg"
-                                        alt="vector"></button>
-                            </div>
-                        </div>
-                        <div class="col-6 px-0 d-none d-md-block">
-                            <img src="css/img/Photo.png" alt="garden image" class="img-fluid w-100">
-                        </div>
-                    </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="row align-items-center column-gap-5">
+                                
+                                <div class="col">
+                                    <div class="header-text ms-lg-5">
+                                        <h1>Lorem ipsum dolor
+                                        </h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus id quae
+                                            exercitationem odio porro nihil sequi reprehenderit? </p>
+                                    </div>
+                                </div>
+                                <div class="col-6 px-0 d-none d-md-block">
+                                    <img src="css/img/Photo3.png" alt="project image" class="img-fluid w-100">
+                                </div>
+                
+                            </div></li>
+                    </ul>
                 </div>
-                <div class="slide">
-                    <div class="row align-items-center column-gap-5">
-                        <div class="col-6 px-0 d-none d-md-block">
-                            <img src="css/img/Photo3.png" alt="project image" class="img-fluid w-100">
-                        </div>
-                        <div class="col">
-                            <div class="header-text ms-lg-5">
-                                <h1>Lorem ipsum dolor
-                                </h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus id quae
-                                    exercitationem odio porro nihil sequi reprehenderit? </p>
-                            </div>
-                        </div>
+            </section>
 
-                    </div>
-                </div>
-            </div>
 
-            <div class="navigation">
-                <button class="radio activeBtn" id="r1"></button>
-                <button class="radio" id="r2"></button>
-            </div>
+
+
+
+
+
         </div>
 
     </header>
@@ -206,7 +213,7 @@
                     </div>
                     <div class="popup-image">
                         <i class="fa-solid fa-x"></i>
-                    
+
                         <div class="image">
                             <img src="css/img/Photo1.png" alt="popup image">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -275,7 +282,8 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+        integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
     <script src="/js/script.js"></script>
 </body>
 

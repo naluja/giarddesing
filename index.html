@@ -28,34 +28,34 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#offer" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Oferta
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cos</a></li>
-                            <li><a class="dropdown-item" href="#">Cos</a></li>
+                            <li><a class="dropdown-item" href="#">Standard</a></li>
+                            <li><a class="dropdown-item" href="#">Standard+</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Cos</a></li>
+                            <li><a class="dropdown-item" href="#">VIP</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">O firmie</a>
+                        <a class="nav-link" href="#about">O firmie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Realizacje</a>
+                        <a class="nav-link" href="#projects">Realizacje</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
+                        <a class="nav-link" href="#contactus">Kontakt</a>
                     </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <button class="btn search" type="submit"><img src="css/img/Icon 01.svg" alt="loop icon"></button>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
+                </ul> 
             </div>
+            <form class="d-flex">
+                <a class="btn search" type="submit"><img src="css/img/Icon 01.svg" alt="loop icon"></a>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
         </div>
     </nav>
     <header>
@@ -81,7 +81,7 @@
 
     </header>
     <main>
-        <section class="offer">
+        <section class="offer" id="offer">
             <div class="container">
                 <div class="offer-content">
                     <div class="offer-text col-7 ms-lg-5 ps-lg-5 mx-auto" >
@@ -133,7 +133,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
 
             <div class="container-fluid">
                 <div class="row align-items-center column-gap-5">
@@ -158,7 +158,7 @@
             </div>
         </section>
 
-        <section class="projects">
+        <section class="projects" id="projects">
             <div class="container-fluid px-0">
                 <div class="projects-text">
                     <h4>Realizacje</h4>
@@ -176,8 +176,7 @@
                         <div class="grid-item"><img src="css/img/Photo8.png" alt="" data-number="7"></div>
                         <div class="grid-item"><img src="css/img/Photo7.png" alt="" data-number="8"></div>
                         <div class="grid-item"><img src="css/img/Photo9.png" alt="" data-number="9"></div>
-
-                    
+                        </div>
                     <div class="popup-image">
                         <i class="fa-solid fa-x"></i>
                         // TO DO
@@ -211,7 +210,7 @@
     </main>
     <footer>
         <div class="container-fluid">
-            <div class="contact row flex-column gy-5 w-75 mx-auto py-lg-5">
+            <div class="contact row flex-column gy-5 w-75 mx-auto py-lg-5" id="contactus">
                 <div class="d-flex justify-content-between flex-lg-row flex-column">
                     <img src="/css/img/giarddesignwhite.svg" alt="" class="mb-4 mb-lg-0">
                     <div class="d-flex justify-content-center align-items-center">

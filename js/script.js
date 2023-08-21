@@ -1,6 +1,7 @@
 const btnSearch = document.querySelector(".search")
 const inputSearch = document.querySelector(".form-control")
 const navbarLinks = document.querySelector(".navbar-nav")
+
 const gridImg = document.querySelector(".grid")
 const images = document.querySelectorAll(".grid img")
 const popup = document.querySelector(".popup-image")
@@ -20,14 +21,6 @@ var msnry = new Masonry(elem, {
 	itemSelector: ".grid-item",
 	gutter: 40,
 })
-
-const loadMore = () => {
-	const getMoreImg = document.querySelectorAll(".none")
-	console.log(getMoreImg)
-	getMoreImg.forEach(img => img.style.display = "block")
-	galleryShadow.style.display = "none";
-
-}
 
 const toggleSearch = () => {
 	inputSearch.classList.toggle("show-input")
@@ -69,15 +62,18 @@ const nextImage = () => {
 }
 
 const lastImage = () => {
-	click--
-	let number = Number(imgPopup.dataset.number) + click
+	click++
+	let number = Number(imgPopup.dataset.number) - click
 	let lastImgData = images.length
 	if (number == 0){
 		next = document.querySelector(`[data-number="${lastImgData}"]`)
 		imgPopup.src = next.getAttribute("src")
+		click = 0
+		number = 9
 	}
 	else{
 		next = document.querySelector(`[data-number="${number}"]`)
+		console.log(number, next)
 		imgPopup.src = next.getAttribute("src")
 	}
 	console.log(number, next, click)
@@ -86,9 +82,11 @@ const lastImage = () => {
 
 btnSearch.addEventListener("click", toggleSearch)
 
+//popup gallery 
 images.forEach(image => image.addEventListener("click", showImagePopup))
-closePopupBtn.addEventListener("click", closeImagePopup)
-nextImg.addEventListener("click", nextImage)
-lastImg.addEventListener("click", lastImage)
 
-scrollBtn.addEventListener("click", loadMore)
+closePopupBtn.addEventListener("click", closeImagePopup)
+
+nextImg.addEventListener("click", nextImage)
+
+lastImg.addEventListener("click", lastImage)

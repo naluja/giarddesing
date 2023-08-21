@@ -29,6 +29,11 @@ nav .d-flex .show-input {
   display: block;
   transform: translateX(-250px);
 }
+nav .d-flex .show-input-collapse {
+  display: block;
+  left: 100px;
+  width: 150px;
+}
 nav .d-flex .search {
   transition: 0.3s;
 }
@@ -46,6 +51,34 @@ nav .nav-link {
 
 header {
   background-color: #DCC1AB;
+  position: relative;
+}
+header .slide.active {
+  display: block;
+}
+header .slide {
+  display: none;
+}
+header .navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+header .navigation .radio {
+  width: 60px;
+  height: 10px;
+  border: 2px solid #1B5B31;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+header .navigation .radio:hover {
+  background-color: #1B5B31;
+}
+header .navigation .radio.activeBtn {
+  background-color: #1B5B31;
 }
 header .header-text h1 {
   font-family: "Montserrat", sans-serif;
@@ -71,9 +104,11 @@ header .header-btn #contact {
   background-color: #1B5B31;
   color: #F5F0EC;
   margin-right: 36px;
+  border: 1px solid #1B5B31;
 }
 header .header-btn #contact:hover {
-  background-color: #54a971;
+  box-shadow: 0px 0px 10px 1px #1B5B31;
+  transform: scale(1.01);
 }
 header .header-btn #production {
   background-color: transparent;
@@ -84,7 +119,8 @@ header .header-btn #production img {
   margin-left: 8px;
 }
 header .header-btn #production:hover {
-  background-color: #F5F0EC;
+  box-shadow: 0px 0px 10px 1px #1B5B31;
+  transform: scale(1.01);
 }
 
 .section-heading {
@@ -173,12 +209,17 @@ h4 {
   background-color: transparent;
   border: 1px solid #F5F0EC;
   color: #F5F0EC;
+  transition: 0.3s;
 }
 .about .about-content .about-btn img {
   margin-left: 8px;
+  transition: 0.3s;
 }
-.about .about-content .about-btn .about-btn:hover {
-  background-color: #F5F0EC;
+.about .about-content .about-btn:hover {
+  box-shadow: 0px 0px 10px 1px #F5F0EC;
+}
+.about .about-content .about-btn:hover img {
+  margin-left: 16px;
 }
 
 .projects {
@@ -260,9 +301,17 @@ h4 {
   transition: 0.3s;
   background-color: transparent;
   border: 1px solid black;
+  transition: 0.3s;
 }
 .gallery-shadow .scroll img {
   margin-left: 10px;
+  transition: 0.3s;
+}
+.gallery-shadow .scroll:hover {
+  box-shadow: 0px 0px 10px 1px black;
+}
+.gallery-shadow .scroll:hover img {
+  margin-top: 10px;
 }
 
 .grid-item img {
@@ -297,9 +346,16 @@ h4 {
   padding: 12px 24px 14px 24px;
   border: none;
   transition: 0.3s;
-  background-color: white;
+  background-color: #F5F0EC;
   color: #1B5B31;
   padding: 10px 24px 12px 24px;
+  border: 1px solid #1B5B31;
+  transition: 0.3s;
+}
+.instagram .instagram-block .instagram-btn:hover {
+  border: 1px solid #F5F0EC;
+  background-color: #1B5B31;
+  color: #F5F0EC;
 }
 
 footer {
@@ -322,6 +378,11 @@ footer .contactBtn {
   transition: 0.3s;
   background-color: #1B5B31;
   color: #F5F0EC;
+  transition: 0.3s;
+}
+footer .contactBtn:hover {
+  background-color: #F5F0EC;
+  color: #1B5B31;
 }
 footer .link {
   text-decoration: none;
@@ -455,17 +516,16 @@ footer .link {
     color: #1B5B31;
     padding: 10px 24px 12px 24px;
   }
+  footer p,
+  footer a,
+  footer address {
+    font-size: 12px;
+  }
+  footer .contactBtn {
+    padding: 5px 15px;
+    font-size: 10px;
+  }
 }
-footer p,
-footer a,
-footer address {
-  font-size: 12px;
-}
-footer .contactBtn {
-  padding: 5px 15px;
-  font-size: 10px;
-}
-
 @media screen and (max-width: 350px) {
   .grid-item img {
     width: 300px;

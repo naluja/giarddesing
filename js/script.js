@@ -1,6 +1,7 @@
 const btnSearch = document.querySelector(".search")
 const inputSearch = document.querySelector(".form-control")
 const navbarLinks = document.querySelector(".navbar-nav")
+const divCollapse = document.querySelector(".navbar-collapse")
 
 const gridImg = document.querySelector(".grid")
 const images = document.querySelectorAll(".grid img")
@@ -12,20 +13,27 @@ const scrollBtn = document.querySelector(".scroll")
 const galleryShadow = document.querySelector(".gallery-shadow")
 const lastImg = popup.querySelector(".fa-arrow-left")
 
-let click = 0
-let next = ''
+const slides = document.querySelectorAll(".slide")
+const slideBtns = document.querySelectorAll(".radio")
 
-// masonry library
-var elem = document.querySelector(".grid")
-var msnry = new Masonry(elem, {
-	itemSelector: ".grid-item",
-	gutter: 40,
-})
+let click = 0
+let next = ""
+
+const slider = () => {
+	slideBtns.forEach(btn => btn.classList.toggle("activeBtn"))
+
+	// rozwiazanie w przypadku gdy mamy tylko 2 mozliwosci
+	slides.forEach(slide => slide.classList.toggle("active"))
+}
 
 const toggleSearch = () => {
-	inputSearch.classList.toggle("show-input")
-	navbarLinks.classList.toggle("move-links")
-	btnSearch.classList.toggle("move-links")
+	if (divCollapse.classList.contains("show")) {
+		inputSearch.classList.toggle("show-input-collapse")
+	} else {
+		inputSearch.classList.toggle("show-input")
+		navbarLinks.classList.toggle("move-links")
+		btnSearch.classList.toggle("move-links")
+	}
 }
 
 const closeImagePopup = () => {
@@ -56,7 +64,7 @@ const nextImage = () => {
 		imgPopup.src = "css/img/Photo1.png"
 		click = 0
 	} else {
-		 next = document.querySelector(`[data-number="${number}"]`)
+		next = document.querySelector(`[data-number="${number}"]`)
 		imgPopup.src = next.getAttribute("src")
 	}
 }
@@ -65,13 +73,12 @@ const lastImage = () => {
 	click++
 	let number = Number(imgPopup.dataset.number) - click
 	let lastImgData = images.length
-	if (number == 0){
+	if (number == 0) {
 		next = document.querySelector(`[data-number="${lastImgData}"]`)
 		imgPopup.src = next.getAttribute("src")
 		click = 0
 		number = 9
-	}
-	else{
+	} else {
 		next = document.querySelector(`[data-number="${number}"]`)
 		console.log(number, next)
 		imgPopup.src = next.getAttribute("src")
@@ -79,10 +86,22 @@ const lastImage = () => {
 	console.log(number, next, click)
 }
 
+const moveShadow = () => {
+	galleryShadow.style.display = "none"
+}
+
+//masonry
+document.addEventListener("DOMContentLoaded", () => {
+	const elem = document.querySelector(".grid")
+	const msnry = new Masonry(elem, {
+		itemSelector: ".grid-item",
+		gutter: 40,
+	})
+})
 
 btnSearch.addEventListener("click", toggleSearch)
 
-//popup gallery 
+//popup gallery
 images.forEach(image => image.addEventListener("click", showImagePopup))
 
 closePopupBtn.addEventListener("click", closeImagePopup)
@@ -90,3 +109,7 @@ closePopupBtn.addEventListener("click", closeImagePopup)
 nextImg.addEventListener("click", nextImage)
 
 lastImg.addEventListener("click", lastImage)
+
+scrollBtn.addEventListener("click", moveShadow)
+
+slideBtns.forEach(btn => btn.addEventListener("click", slider))

@@ -37,6 +37,11 @@ nav {
 			display: block;
 			transform: translateX(-250px);
 		}
+		.show-input-collapse {
+			display: block;
+			left: 100px;
+			width: 150px;
+		}
 		.search {
 			transition: 0.3s;
 		}
@@ -55,6 +60,35 @@ nav {
 
 header {
 	background-color: $beige;
+	position:relative;
+	.slide.active{
+		display:block;
+	}
+	.slide{
+		display:none;
+	}
+	.navigation{
+		position:absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		display:flex;
+		.radio{
+			width: 60px;
+			height: 10px;
+			border:2px solid $primaryColor;
+			margin: 10px;
+			cursor:pointer;
+			transition: .3s;
+		}
+		.radio:hover{
+			background-color: $primaryColor;
+		}
+		.radio.activeBtn{
+			background-color: $primaryColor;
+		}
+		
+	}
 	.header-text {
 		h1 {
 			font-family: "Montserrat", sans-serif;
@@ -79,9 +113,11 @@ header {
 			background-color: $primaryColor;
 			color: $gray;
 			margin-right: 36px;
+			border:1px solid $primaryColor
 		}
 		#contact:hover {
-			background-color: $hoverColor;
+			box-shadow: 0px 0px 10px 1px $primaryColor;
+			transform:scale(1.01)
 		}
 		#production {
 			background-color: transparent;
@@ -92,7 +128,8 @@ header {
 			}
 		}
 		#production:hover {
-			background-color: $offerBc;
+			box-shadow: 0px 0px 10px 1px $primaryColor;
+			transform: scale(1.01);
 		}
 	}
 }
@@ -185,12 +222,19 @@ h4 {
 			background-color: transparent;
 			border: 1px solid $gray;
 			color: $gray;
+			transition: .3s;
 			img {
 				margin-left: 8px;
+				transition: .3s;
 			}
-			.about-btn:hover {
-				background-color: $offerBc;
+			
+		}
+		.about-btn:hover {
+			box-shadow: 0px 0px 10px 1px $gray;
+			img{
+				margin-left: 16px;
 			}
+		
 		}
 	}
 }
@@ -269,8 +313,16 @@ h4 {
 		@include roundButton();
 		background-color: transparent;
 		border: 1px solid black;
+		transition: .3s;
 		img {
 			margin-left: 10px;
+			transition: .3s;
+		}
+	}
+	.scroll:hover{
+		box-shadow: 0px 0px 10px 1px black;
+		img{
+			margin-top: 10px;
 		}
 	}
 }
@@ -307,9 +359,17 @@ h4 {
 		.instagram-btn {
 			margin-top: 24px;
 			@include roundButton();
-			background-color: white;
+			background-color: $gray;
 			color: $primaryColor;
 			padding: 10px 24px 12px 24px;
+			border:1px solid $primaryColor;
+			transition: .3s;
+		}
+		.instagram-btn:hover{
+			border:1px solid $gray;
+			background-color: $primaryColor;
+			color:$gray;
+
 		}
 	}
 }
@@ -329,6 +389,11 @@ footer {
 		@include roundButton();
 		background-color: $primaryColor;
 		color: $gray;
+		transition: .3s;
+	}
+	.contactBtn:hover{
+		background-color: $gray;
+		color:$primaryColor;
 	}
 	.link {
 		text-decoration: none;
@@ -491,17 +556,18 @@ footer {
 			}
 		}
 	}
+	footer {
+		p,
+		a,
+		address {
+			font-size: 12px;
+		}
+		.contactBtn {
+			padding: 5px 15px;
+			font-size: 10px;
+		}
 }
-footer {
-	p,
-	a,
-	address {
-		font-size: 12px;
-	}
-	.contactBtn {
-		padding: 5px 15px;
-		font-size: 10px;
-	}
+
 }
 @media screen and (max-width: 350px) {
 	.grid-item {

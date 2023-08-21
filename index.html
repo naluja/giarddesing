@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@400;500&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a6428406eb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -50,32 +51,59 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contactus">Kontakt</a>
                     </li>
-                </ul> 
+                </ul>
+                <form class="d-flex">
+                    <a class="btn search" type="submit"><img src="css/img/Icon 01.svg" alt="loop icon"></a>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
             </div>
-            <form class="d-flex">
-                <a class="btn search" type="submit"><img src="css/img/Icon 01.svg" alt="loop icon"></a>
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
+
         </div>
     </nav>
     <header>
         <div class="container-fluid">
-            <div class="row align-items-center column-gap-5">
-                <div class="col">
-                    <div class="header-text ms-lg-5">
-                        <h1>Nowoczesna aranżacja Twojego ogrodu</h1>
-                        <p>Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy
-                            kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
-                    </div>
-                    <div class="header-btn ms-lg-5 d-flex justify-content-center">
-                        <button id="contact">Skontaktuj się z nami</button>
-                        <button id="production">Zobacz nasze realizacje<img src="/css/img/Vector.svg"
-                                alt="vector"></button>
+            <div class="slider-container">
+                <div class="slide active">
+                    <div class="row align-items-center column-gap-5">
+                        <div class="col">
+                            <div class="header-text ms-lg-5">
+                                <h1>Nowoczesna aranżacja Twojego ogrodu</h1>
+                                <p>Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji.
+                                    Oferujemy
+                                    kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+                            </div>
+                            <div class="header-btn ms-lg-5 d-flex justify-content-center">
+                                <button id="contact">Skontaktuj się z nami</button>
+                                <button id="production">Zobacz nasze realizacje<img src="/css/img/Vector.svg"
+                                        alt="vector"></button>
+                            </div>
+                        </div>
+                        <div class="col-6 px-0 d-none d-md-block">
+                            <img src="css/img/Photo.png" alt="garden image" class="img-fluid w-100">
+                        </div>
                     </div>
                 </div>
-                <div class="col-6 px-0 d-none d-md-block">
-                    <img src="css/img/Photo.png" alt="" class="img-fluid w-100">
+                <div class="slide">
+                    <div class="row align-items-center column-gap-5">
+                        <div class="col-6 px-0 d-none d-md-block">
+                            <img src="css/img/Photo3.png" alt="project image" class="img-fluid w-100">
+                        </div>
+                        <div class="col">
+                            <div class="header-text ms-lg-5">
+                                <h1>Lorem ipsum dolor
+                                </h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus id quae
+                                    exercitationem odio porro nihil sequi reprehenderit? </p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+            </div>
+
+            <div class="navigation">
+                <button class="radio activeBtn" id="r1"></button>
+                <button class="radio" id="r2"></button>
             </div>
         </div>
 
@@ -84,7 +112,7 @@
         <section class="offer" id="offer">
             <div class="container">
                 <div class="offer-content">
-                    <div class="offer-text col-7 ms-lg-5 ps-lg-5 mx-auto" >
+                    <div class="offer-text col-7 ms-lg-5 ps-lg-5 mx-auto">
                         <h4>Oferta</h4>
                         <h2 class="section-heading">Działamy <i>kompleksowo</i></h2>
                         <p>Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody
@@ -138,7 +166,7 @@
             <div class="container-fluid">
                 <div class="row align-items-center column-gap-5">
                     <div class="col-6 px-0 d-none d-md-block">
-                        <img src="css/img/photo-about.png" alt="" class="img-fluid w-100">
+                        <img src="css/img/photo-about.png" alt="garden image" class="img-fluid w-100">
                     </div>
                     <div class="col">
                         <div class="about-content ps-xl-5 ms-lg-5 mx-auto py-3 py-lg-none text-center text-md-start">
@@ -150,8 +178,8 @@
                                 geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do
                                 współczesnego trybu życia.</p>
                             <button class="about-btn mt-5">Poznaj nas blizej <img src="css/img/vector-white.svg"
-                                    alt=""></button>
-                                    <div class="about-shadow"></div>
+                                    alt="arrow-down"></button>
+                            <div class="about-shadow"></div>
                         </div>
                     </div>
                 </div>
@@ -166,35 +194,35 @@
                 </div>
                 <div class="gallery">
                     <div class="grid">
-                        <div class="grid-sizer"></div>
-                        <div class="grid-item"><img src="css/img/Photo1.png" alt="" data-number="1"></div>
-                        <div class="grid-item"><img src="css/img/Photo2.png" alt="" data-number="2"></div>
-                        <div class="grid-item"><img src="css/img/Photo3.png" alt="" data-number="3"></div>
-                        <div class="grid-item"><img src="css/img/Photo4.png" alt="" data-number="4"></div>
-                        <div class="grid-item"><img src="css/img/Photo6.png" alt="" data-number="5"></div>
-                        <div class="grid-item"><img src="css/img/Photo5.png" alt="" data-number="6"></div>
-                        <div class="grid-item"><img src="css/img/Photo8.png" alt="" data-number="7"></div>
-                        <div class="grid-item"><img src="css/img/Photo7.png" alt="" data-number="8"></div>
-                        <div class="grid-item"><img src="css/img/Photo9.png" alt="" data-number="9"></div>
-                        </div>
+                        <div class="grid-item"><img src="css/img/Photo1.png" alt="project image" data-number="1"></div>
+                        <div class="grid-item"><img src="css/img/Photo2.png" alt="project image" data-number="2"></div>
+                        <div class="grid-item"><img src="css/img/Photo3.png" alt="project image" data-number="3"></div>
+                        <div class="grid-item"><img src="css/img/Photo4.png" alt="project image" data-number="4"></div>
+                        <div class="grid-item"><img src="css/img/Photo6.png" alt="project image" data-number="5"></div>
+                        <div class="grid-item"><img src="css/img/Photo5.png" alt="project image" data-number="6"></div>
+                        <div class="grid-item"><img src="css/img/Photo8.png" alt="project image" data-number="7"></div>
+                        <div class="grid-item"><img src="css/img/Photo7.png" alt="project image" data-number="8"></div>
+                        <div class="grid-item"><img src="css/img/Photo9.png" alt="project image" data-number="9"></div>
+                    </div>
                     <div class="popup-image">
                         <i class="fa-solid fa-x"></i>
-                        // TO DO
+                    
                         <div class="image">
-                            <img src="css/img/Photo1.png" alt="">
+                            <img src="css/img/Photo1.png" alt="popup image">
                             <i class="fa-solid fa-arrow-right"></i>
                             <i class="fa-solid fa-arrow-left"></i>
                         </div>
                     </div>
                     <div class="gallery-shadow">
-                        <button class="scroll">Rozwiń<img src="/css/img/blackarrowdown.svg" alt=""></button>
+                        <button class="scroll">Rozwiń<img src="/css/img/blackarrowdown.svg" alt="arrow-down"></button>
                     </div>
                 </div>
 
         </section>
         <section class="instagram">
             <div class="container-fluid py-lg-5 mb-lg-5">
-                <div class="instagram-block w-75 mx-auto d-flex  justify-content-between align-items-center column-gap-5">
+                <div
+                    class="instagram-block w-75 mx-auto d-flex  justify-content-between align-items-center column-gap-5">
                     <div class="instagram-text">
                         <h3 class="instagram-heading">Zostańmy w kontakcie! Znajdziesz nas na <span>Instagramie.</span>
                         </h3>
@@ -212,13 +240,13 @@
         <div class="container-fluid">
             <div class="contact row flex-column gy-5 w-75 mx-auto py-lg-5" id="contactus">
                 <div class="d-flex justify-content-between flex-lg-row flex-column">
-                    <img src="/css/img/giarddesignwhite.svg" alt="" class="mb-4 mb-lg-0">
+                    <img src="/css/img/giarddesignwhite.svg" alt="giard desing logo" class="mb-4 mb-lg-0">
                     <div class="d-flex justify-content-center align-items-center">
                         <p class="mb-0 me-4">Daj znać, co możemy dla Ciebie zrobić!</p>
                         <button class="contactBtn">Skontaktuj się z nami</button>
                     </div>
                 </div>
-               <div class="line"></div>
+                <div class="line"></div>
                 <div class="d-flex justify-content-between">
                     <div class="links mb-4 mb-lg-0 d-flex flex-lg-row flex-column">
                         <a href="#" class="link me-5 mb-3">Kontakt</a>
@@ -226,7 +254,8 @@
                         <a href="#" class="link me-5 mb-3">Facebook</a>
                         <a href="#" class="link me-5 mb-3">Linked</a>
                     </div>
-                    <div class="address d-flex justify-content-l-between justify-content-center flex-lg-row flex-column">
+                    <div
+                        class="address d-flex justify-content-l-between justify-content-center flex-lg-row flex-column">
                         <p class="me-5">000-000-000</p>
                         <address>giarddesign@kontakt.pl</address>
                     </div>
@@ -234,7 +263,7 @@
             </div>
             <div class="d-flex justify-content-between w-75 mx-auto py-lg-5 mt-5">
                 <p>Prawa zastrzeżone © 2022</p>
-                <p>made by <img src="/css/img/logo-full-light.svg" alt=""></p>
+                <p>made by <img src="/css/img/logo-full-light.svg" alt="adRespect logo"></p>
             </div>
         </div>
 
@@ -246,6 +275,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
     <script src="/js/script.js"></script>
 </body>
 

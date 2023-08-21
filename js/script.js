@@ -11,20 +11,12 @@ const closePopupBtn = popup.querySelector(".fa-x")
 const nextImg = popup.querySelector(".fa-arrow-right")
 const scrollBtn = document.querySelector(".scroll")
 const galleryShadow = document.querySelector(".gallery-shadow")
-const lastImg = popup.querySelector(".fa-arrow-left")
 
 const slides = document.querySelectorAll(".slide")
 const slideBtns = document.querySelectorAll(".radio")
 
 let click = 0
 let next = ""
-
-// const slider = () => {
-// 	slideBtns.forEach(btn => btn.classList.toggle("activeBtn"))
-
-// 	// rozwiazanie w przypadku gdy mamy tylko 2 mozliwosci
-// 	slides.forEach(slide => slide.classList.toggle("active"))
-// }
 
 const toggleSearch = () => {
 	if (divCollapse.classList.contains("show")) {
@@ -59,6 +51,7 @@ const showMore = () => {
 
 const nextImage = () => {
 	click++
+	y = 0
 	let number = Number(imgPopup.dataset.number) + click
 	if (number > images.length) {
 		imgPopup.src = "css/img/Photo1.png"
@@ -69,22 +62,6 @@ const nextImage = () => {
 	}
 }
 
-const lastImage = () => {
-	click++
-	let number = Number(imgPopup.dataset.number) - click
-	let lastImgData = images.length
-	if (number == 0) {
-		next = document.querySelector(`[data-number="${lastImgData}"]`)
-		imgPopup.src = next.getAttribute("src")
-		click = 0
-		number = 9
-	} else {
-		next = document.querySelector(`[data-number="${number}"]`)
-		console.log(number, next)
-		imgPopup.src = next.getAttribute("src")
-	}
-	console.log(number, next, click)
-}
 
 const moveShadow = () => {
 	galleryShadow.style.display = "none"
@@ -98,6 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		gutter: 40,
 	})
 })
+//slider 
+document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide' );
+    splide.mount();
+  } );
 
 btnSearch.addEventListener("click", toggleSearch)
 
@@ -108,13 +90,5 @@ closePopupBtn.addEventListener("click", closeImagePopup)
 
 nextImg.addEventListener("click", nextImage)
 
-lastImg.addEventListener("click", lastImage)
-
 scrollBtn.addEventListener("click", moveShadow)
 
-// slideBtns.forEach(btn => btn.addEventListener("click", slider))
-
-document.addEventListener( 'DOMContentLoaded', function() {
-    var splide = new Splide( '.splide' );
-    splide.mount();
-  } );

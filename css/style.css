@@ -45,7 +45,7 @@ nav .nav-link {
   transform: translateX(-100px);
 }
 
-.navbar-expand-md .navbar-collapse {
+.navbar-expand-lg .navbar-collapse {
   justify-content: flex-end;
 }
 
@@ -257,15 +257,6 @@ h4 {
   font-size: 24px;
   cursor: pointer;
 }
-.projects .popup-image .fa-arrow-left {
-  color: white;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 20%;
-  font-size: 24px;
-  cursor: pointer;
-}
 .projects .popup-image img {
   position: absolute;
   top: 50%;
@@ -431,7 +422,46 @@ footer .link {
     text-align: center;
   }
   header .header-text {
-    margin-top: 100px;
+    margin-top: 50px;
+  }
+  header .header-text h1 {
+    font-size: 34px;
+  }
+  header .header-text p {
+    font-size: 12px;
+  }
+  header .header-btn button {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+  header .header-btn button img {
+    width: 10px;
+  }
+  .section-heading {
+    font-size: 32px;
+  }
+  .about {
+    background-color: #1B5B31;
+    color: #F5F0EC;
+  }
+  .about .about-content p {
+    font-size: 12px;
+  }
+  .about .about-content .about-btn {
+    border-radius: 200px;
+    padding: 12px 24px 14px 24px;
+    border: none;
+    transition: 0.3s;
+    background-color: transparent;
+    border: 1px solid #F5F0EC;
+    color: #F5F0EC;
+    transition: 0.3s;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .about .about-content .about-btn img {
+    margin-left: 8px;
+    transition: 0.3s;
   }
   .projects {
     padding-top: 60px;

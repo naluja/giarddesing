@@ -54,7 +54,7 @@ nav {
 	transform: translateX(-100px);
 }
 
-.navbar-expand-md .navbar-collapse {
+.navbar-expand-lg .navbar-collapse {
 	justify-content: flex-end;
 }
 
@@ -152,8 +152,7 @@ h4 {
 	.offer-content {
 		padding: 120px 0px 160px 0px;
 		.offer-text {
-			// margin-left:96px;
-			// width: 55%;
+			
 			p {
 				line-height: 150%; /* 24px */
 				letter-spacing: -0.16px;
@@ -274,15 +273,7 @@ h4 {
 			font-size: 24px;
 			cursor: pointer;
 		}
-		.fa-arrow-left {
-			color: white;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 20%;
-			font-size: 24px;
-			cursor: pointer;
-		}
+		
 		img {
 			position: absolute;
 			top: 50%;
@@ -455,7 +446,50 @@ footer {
 		height: 500px;
 		text-align: center;
 		.header-text {
-			margin-top: 100px;
+			margin-top: 50px;
+			h1{
+				font-size: 34px;
+			}
+			p{
+				font-size: 12px;
+			}
+		}
+		.header-btn {
+			
+			button {
+				font-size: 10px;
+				padding: 5px 7px;
+				img {
+					width: 10px;
+				}
+			}
+		}
+	}
+	.section-heading{
+		font-size: 32px;
+	}
+	.about {
+		background-color: $primaryColor;
+		color: $gray;
+		.about-content {
+			p {
+				
+				font-size: 12px;
+			}
+			.about-btn {
+				@include roundButton();
+				background-color: transparent;
+				border: 1px solid $gray;
+				color: $gray;
+				transition: .3s;
+				padding: 5px 10px;
+				font-size: 12px;
+				img {
+					margin-left: 8px;
+					transition: .3s;
+				}
+				
+			}
 		}
 	}
 	.projects {

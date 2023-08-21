@@ -69,8 +69,8 @@ const moveShadow = () => {
 
 //masonry
 document.addEventListener("DOMContentLoaded", () => {
-	const elem = document.querySelector(".grid")
-	const msnry = new Masonry(elem, {
+	var elem = document.querySelector(".grid")
+	var msnry = new Masonry(elem, {
 		itemSelector: ".grid-item",
 		gutter: 40,
 	})

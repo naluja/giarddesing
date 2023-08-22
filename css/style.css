@@ -257,6 +257,15 @@ h4 {
   font-size: 24px;
   cursor: pointer;
 }
+.projects .popup-image .fa-arrow-left {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+  font-size: 24px;
+  cursor: pointer;
+}
 .projects .popup-image img {
   position: absolute;
   top: 50%;
@@ -302,6 +311,9 @@ h4 {
   margin-top: 10px;
 }
 
+.grid-item {
+  cursor: pointer;
+}
 .grid-item img {
   transition: transform 0.3s;
   margin-bottom: 42px;

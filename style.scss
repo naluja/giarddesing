@@ -273,6 +273,15 @@ h4 {
 			font-size: 24px;
 			cursor: pointer;
 		}
+		.fa-arrow-left {
+			color: white;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 20%;
+			font-size: 24px;
+			cursor: pointer;
+		}
 		
 		img {
 			position: absolute;
@@ -317,6 +326,7 @@ h4 {
 }
 
 .grid-item {
+	cursor:pointer;
 	img {
 		transition: transform 0.3s;
 		margin-bottom: 42px;

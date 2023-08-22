@@ -11,12 +11,12 @@ const closePopupBtn = popup.querySelector(".fa-x")
 const nextImg = popup.querySelector(".fa-arrow-right")
 const scrollBtn = document.querySelector(".scroll")
 const galleryShadow = document.querySelector(".gallery-shadow")
+const lastImg = popup.querySelector(".fa-arrow-left")
 
 const slides = document.querySelectorAll(".slide")
 const slideBtns = document.querySelectorAll(".radio")
 
 let click = 0
-let next = ""
 
 const toggleSearch = () => {
 	if (divCollapse.classList.contains("show")) {
@@ -51,17 +51,27 @@ const showMore = () => {
 
 const nextImage = () => {
 	click++
-	y = 0
 	let number = Number(imgPopup.dataset.number) + click
 	if (number > images.length) {
 		imgPopup.src = "css/img/Photo1.png"
 		click = 0
 	} else {
-		next = document.querySelector(`[data-number="${number}"]`)
+		let next = document.querySelector(`[data-number="${number}"]`)
 		imgPopup.src = next.getAttribute("src")
-	}
+	}	
+	
 }
-
+const lastImage = () => {
+	click--
+		let number = Number(imgPopup.dataset.number) + click
+		if (number == 0) {
+			click = 0
+		} else {
+			let next = document.querySelector(`[data-number="${number}"]`)
+			imgPopup.src = next.getAttribute("src")
+		}
+		
+}
 
 const moveShadow = () => {
 	galleryShadow.style.display = "none"
@@ -69,17 +79,17 @@ const moveShadow = () => {
 
 //masonry
 document.addEventListener("DOMContentLoaded", () => {
-	var elem = document.querySelector(".grid")
-	var msnry = new Masonry(elem, {
+	const elem = document.querySelector(".grid")
+	const msnry = new Masonry(elem, {
 		itemSelector: ".grid-item",
 		gutter: 40,
 	})
 })
-//slider 
-document.addEventListener( 'DOMContentLoaded', function() {
-    var splide = new Splide( '.splide' );
-    splide.mount();
-  } );
+//slider
+document.addEventListener("DOMContentLoaded", function () {
+	var splide = new Splide(".splide")
+	splide.mount()
+})
 
 btnSearch.addEventListener("click", toggleSearch)
 
@@ -89,6 +99,8 @@ images.forEach(image => image.addEventListener("click", showImagePopup))
 closePopupBtn.addEventListener("click", closeImagePopup)
 
 nextImg.addEventListener("click", nextImage)
+
+lastImg.addEventListener("click", lastImage)
 
 scrollBtn.addEventListener("click", moveShadow)
 

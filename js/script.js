@@ -78,7 +78,7 @@ const moveShadow = () => {
 }
 
 //masonry
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
 	const elem = document.querySelector(".grid")
 	const msnry = new Masonry(elem, {
 		itemSelector: ".grid-item",
